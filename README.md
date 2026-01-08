@@ -2,6 +2,7 @@
 
 A modern, responsive portfolio website showcasing skills, experience, and projects. Built with vanilla web technologies and enhanced with AI assistance.
 
+[Youtube-video](https://youtu.be/EkpK0CF1juI)
 ## 🌐 Languages / Diller
 
 - [English](#english)
@@ -314,5 +315,6 @@ Sorularınız veya önerileriniz için lütfen iletişime geçin.
 ---
 
 **Not**: Bu proje, modern web teknolojileri ve yapay zeka destekli geliştirme araçları kullanılarak oluşturulmuştur. Tüm tasarım ve kod yapısı Cursor IDE'nin vibe coding özelliği ile optimize edilmiştir.
+
 
 
