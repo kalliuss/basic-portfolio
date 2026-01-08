@@ -315,3 +315,4 @@ Sorularınız veya önerileriniz için lütfen iletişime geçin.
 
 **Not**: Bu proje, modern web teknolojileri ve yapay zeka destekli geliştirme araçları kullanılarak oluşturulmuştur. Tüm tasarım ve kod yapısı Cursor IDE'nin vibe coding özelliği ile optimize edilmiştir.
 
+
