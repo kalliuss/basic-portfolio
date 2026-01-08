@@ -1,0 +1,649 @@
+/* ============================================
+   ADIM 1: Sade Arka Plan - Transparanlık ile
+   ============================================ */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fa;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    /* Scroll performansı için */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+}
+
+/* Ana container - iki kolonlu layout */
+.page-wrapper {
+    display: flex;
+    min-height: 100vh;
+    padding: 20px;
+    gap: 30px;
+    max-width: 1600px;
+    margin: 0 auto;
+    /* GPU hızlandırması */
+    transform: translateZ(0);
+    will-change: scroll-position;
+}
+
+/* Sol taraf - Bilgiler */
+.content-left {
+    flex: 1;
+    max-width: 800px;
+    padding-right: 20px;
+    /* Scroll performansı */
+    contain: layout style paint;
+}
+
+/* Sağ taraf - Slider */
+.content-right {
+    flex: 0 0 450px;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+    align-self: flex-start;
+    /* GPU hızlandırması ve scroll optimizasyonu */
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* ============================================
+   ADIM 2: Genel Tipografi ve Container
+   ============================================ */
+* {
+    box-sizing: border-box;
+}
+
+.welcome {
+    text-align: center;
+    color: #2d3748;
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin: 0 0 30px 0;
+    letter-spacing: 2px;
+}
+
+/* ============================================
+   ADIM 3: Header Bölümü - Modern ve Sade (Transparan)
+   ============================================ */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    /* backdrop-filter kaldırıldı - scroll performansı için */
+    padding: 40px 30px;
+    margin: 0 0 30px 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    /* GPU hızlandırması */
+    transform: translateZ(0);
+    contain: layout style paint;
+}
+
+header h1 {
+    color: #2d3748;
+    font-size: 2.5rem;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+header h2 {
+    color: #667eea;
+    font-size: 1.3rem;
+    margin: 0 0 25px 0;
+    font-weight: 400;
+}
+
+.contact-infor {
+    margin-top: 20px;
+}
+
+.contact-infor address {
+    font-style: normal;
+    color: #4a5568;
+    line-height: 1.8;
+}
+
+.contact-infor p {
+    margin: 5px 0;
+    color: #667eea;
+}
+
+/* ============================================
+   ADIM 4: Main Bölümü - Kart Tasarımı (Transparan)
+   ============================================ */
+main {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    background: rgba(255, 255, 255, 0.95);
+    /* backdrop-filter kaldırıldı - scroll performansı için */
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    /* GPU hızlandırması */
+    transform: translateZ(0);
+    contain: layout style paint;
+}
+
+section:hover {
+    transform: translate3d(0, -5px, 0);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    will-change: transform;
+}
+
+section:not(:hover) {
+    will-change: auto;
+}
+
+.s-title {
+    color: #667eea;
+    font-size: 1.5rem;
+    margin: 0 0 20px 0;
+    font-weight: 600;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 10px;
+}
+
+section p {
+    color: #4a5568;
+    line-height: 1.8;
+    margin: 10px 0;
+}
+
+/* Skills bölümü için özel stil - Etkileşimli Iconlar */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+    min-width: 100px;
+    position: relative;
+    transform: translateZ(0);
+}
+
+.skill-item:hover {
+    transform: translate3d(0, -8px, 0) scale(1.1);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+    will-change: transform;
+}
+
+.skill-item:not(:hover) {
+    will-change: auto;
+}
+
+.skill-item i {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    transition: all 0.3s ease-out;
+}
+
+.skill-item:hover i {
+    transform: rotateY(360deg) scale(1.1);
+}
+
+.skill-item span {
+    font-size: 0.9rem;
+    color: #4a5568;
+    font-weight: 500;
+    text-align: center;
+    transition: color 0.3s ease-out;
+}
+
+.skill-item:hover span {
+    color: #667eea;
+    font-weight: 600;
+}
+
+/* Her skill için özel renkler */
+.skill-item.html i {
+    color: #e34c26;
+}
+
+.skill-item.css i {
+    color: #264de4;
+}
+
+.skill-item.js i {
+    color: #f7df1e;
+}
+
+.skill-item.csharp i {
+    color: #239120;
+}
+
+.skill-item.java i {
+    color: #ed8b00;
+}
+
+.skill-item.python i {
+    color: #3776ab;
+}
+
+/* Tooltip efekti */
+.skill-item::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #2d3748;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-out;
+    z-index: 10;
+}
+
+.skill-item::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    border: 5px solid transparent;
+    border-bottom-color: #2d3748;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-out;
+    z-index: 10;
+}
+
+.skill-item:hover::before,
+.skill-item:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Experience bölümü için özel stil */
+.experience article {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.experience article:last-child {
+    border-bottom: none;
+}
+
+.experience h4 {
+    color: #2d3748;
+    font-size: 1.2rem;
+    margin: 0 0 8px 0;
+    font-weight: 600;
+}
+
+.experience p {
+    color: #718096;
+    font-size: 0.95rem;
+    margin: 0 0 12px 0;
+}
+
+.experience ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.experience li {
+    color: #4a5568;
+    line-height: 1.8;
+    margin: 8px 0;
+}
+
+/* ============================================
+   ADIM 5: GitHub ve LinkedIn Linkleri - Logo ile
+   ============================================ */
+.internet {
+    text-align: center;
+}
+
+.internet a {
+    color: #667eea;
+    text-decoration: none;
+    font-size: 1.1rem;
+    margin: 0 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s ease-out, transform 0.2s ease-out;
+    /* GPU hızlandırması */
+    transform: translateZ(0);
+}
+
+.internet a:hover {
+    color: #764ba2;
+    transform: translate3d(0, 0, 0) scale(1.05);
+    will-change: transform;
+}
+
+.internet a i {
+    font-size: 1.3rem;
+}
+
+/* ============================================
+   Slider Container Stilleri (Sağ Taraf)
+   ============================================ */
+.slider-container {
+    width: 100%;
+}
+
+.slider-container .card {
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border: none;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.95);
+    /* backdrop-filter kaldırıldı - scroll performansı için */
+    /* GPU hızlandırması */
+    transform: translateZ(0);
+    contain: layout style paint;
+}
+
+.slider-container .card-img-top {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    background-color: #f8f9fa;
+    padding: 10px;
+    /* GPU hızlandırması */
+    transform: translateZ(0);
+    will-change: contents;
+}
+
+.slider-container .card-body {
+    background: transparent;
+}
+
+.slider-container .card-title {
+    color: #2d3748;
+    font-weight: 600;
+}
+
+.slider-container .card-link {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.slider-container .card-link:hover {
+    color: #764ba2;
+}
+
+.slider-container .card-subtitle {
+    color: #718096;
+    font-size: 0.85rem;
+    margin-top: 10px;
+}
+
+.slider-container .card-footer {
+    background: transparent;
+    border-top: 1px solid rgba(226, 232, 240, 0.5);
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+.slider-container .card-footer i {
+    color: #667eea;
+    cursor: pointer;
+    transition: color 0.2s ease-out, transform 0.2s ease-out;
+    /* GPU hızlandırması */
+    transform: translateZ(0);
+}
+
+.slider-container .card-footer i:hover {
+    color: #764ba2;
+    transform: translate3d(0, 0, 0) scale(1.1);
+    will-change: transform;
+}
+
+/* ============================================
+   Responsive Tasarım
+   ============================================ */
+@media (max-width: 1200px) {
+    .page-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .content-left {
+        max-width: 100%;
+        padding-right: 0;
+    }
+    
+    .content-right {
+        flex: 1;
+        position: relative;
+        top: auto;
+        transform: none;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-wrapper {
+        padding: 15px;
+    }
+    
+    .welcome {
+        font-size: 1.4rem;
+        margin: 20px 0;
+    }
+    
+    header {
+        padding: 30px 20px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    header h2 {
+        font-size: 1.1rem;
+    }
+    
+    section {
+        padding: 20px;
+    }
+}
+
+/* ============================================
+   Dark/Light Mode Toggle Butonu
+   ============================================ */
+.theme-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: all 0.3s ease-out;
+    transform: translateZ(0);
+}
+
+.theme-toggle:hover {
+    transform: translate3d(0, -5px, 0) scale(1.1);
+    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.6);
+    will-change: transform;
+}
+
+.theme-toggle:active {
+    transform: translate3d(0, -2px, 0) scale(0.95);
+}
+
+.theme-toggle i {
+    font-size: 1.8rem;
+    color: white;
+    transition: transform 0.5s ease-out;
+}
+
+.theme-toggle:hover i {
+    transform: rotate(180deg);
+}
+
+/* Dark Mode Stilleri */
+body.dark-mode {
+    background: #1a202c;
+}
+
+body.dark-mode .welcome {
+    color: #e2e8f0;
+}
+
+body.dark-mode header {
+    background: rgba(26, 32, 44, 0.95);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode header h1 {
+    color: #e2e8f0;
+}
+
+body.dark-mode header h2 {
+    color: #90cdf4;
+}
+
+body.dark-mode .contact-infor address {
+    color: #cbd5e0;
+}
+
+body.dark-mode .contact-infor p {
+    color: #90cdf4;
+}
+
+body.dark-mode section {
+    background: rgba(26, 32, 44, 0.95);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .s-title {
+    color: #90cdf4;
+    border-bottom-color: #90cdf4;
+}
+
+body.dark-mode section p {
+    color: #cbd5e0;
+}
+
+body.dark-mode .experience h4 {
+    color: #e2e8f0;
+}
+
+body.dark-mode .experience p {
+    color: #a0aec0;
+}
+
+body.dark-mode .experience li {
+    color: #cbd5e0;
+}
+
+body.dark-mode .experience article {
+    border-bottom-color: #2d3748;
+}
+
+body.dark-mode .internet a {
+    color: #90cdf4;
+}
+
+body.dark-mode .internet a:hover {
+    color: #63b3ed;
+}
+
+body.dark-mode .skill-item {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+}
+
+body.dark-mode .skill-item:hover {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.3), rgba(118, 75, 162, 0.3));
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+body.dark-mode .skill-item span {
+    color: #cbd5e0;
+}
+
+body.dark-mode .skill-item:hover span {
+    color: #90cdf4;
+}
+
+body.dark-mode .slider-container .card {
+    background: rgba(26, 32, 44, 0.95);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .slider-container .card-title {
+    color: #e2e8f0;
+}
+
+body.dark-mode .slider-container .card-link {
+    color: #90cdf4;
+}
+
+body.dark-mode .slider-container .card-link:hover {
+    color: #63b3ed;
+}
+
+body.dark-mode .slider-container .card-subtitle {
+    color: #a0aec0;
+}
+
+body.dark-mode .slider-container .card-footer {
+    border-top-color: #2d3748;
+}
+
+body.dark-mode .slider-container .card-footer i {
+    color: #90cdf4;
+}
+
+body.dark-mode .slider-container .card-footer i:hover {
+    color: #63b3ed;
+}
+
+@media (max-width: 768px) {
+    .theme-toggle {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .theme-toggle i {
+        font-size: 1.5rem;
+    }
+}
+
